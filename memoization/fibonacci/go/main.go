@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// fibonacci returns the number in the sequence
 func fibonacci(n uint64, memo map[uint64]uint64) uint64 {
 	if _, exists := memo[n]; exists {
 		return memo[n]
