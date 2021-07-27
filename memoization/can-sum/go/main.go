@@ -20,6 +20,8 @@ func canSum(targetSum int, numbers []int, m memo) bool {
 	for _, number := range numbers {
 		remainder := targetSum - number
 
+		//fmt.Println("==>", targetSum, "-", number, "=", remainder, numbers, m)
+
 		if canSum(remainder, numbers, m) {
 			m[remainder] = true
 			return true
