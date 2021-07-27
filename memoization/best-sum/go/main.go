@@ -4,29 +4,40 @@ import "fmt"
 
 type memo map[int][]int
 
-func bestSum(targetSum int, numbers []int, m memo) []int {
+type possibleCombination struct {
+	combination []int
+}
+
+func bestSum(targetSum int, numbers []int, m memo) ([]int, []possibleCombination) {
 	if _, exists := m[targetSum]; exists {
-		return m[targetSum]
+		return m[targetSum], nil
 	}
 
 	if targetSum == 0 {
-		return []int{}
+		return []int{}, nil
 	}
 
 	if targetSum < 0 {
-		return nil
+		return nil, nil
 	}
 
 	var shortestCombination []int
+	var possibleCombinations []possibleCombination
 
 	for _, number := range numbers {
 		remainder := targetSum - number
-		remainderCombination := bestSum(remainder, numbers, m)
+
+		remainderCombination, _ := bestSum(remainder, numbers, m)
 
 		if remainderCombination != nil {
 			combination := append(remainderCombination, number)
 
 			if shortestCombination == nil || len(combination) < len(shortestCombination) {
+
+				possibleCombinations = append(possibleCombinations, possibleCombination{
+					combination: combination,
+				})
+
 				shortestCombination = combination
 			}
 		}
@@ -34,7 +45,7 @@ func bestSum(targetSum int, numbers []int, m memo) []int {
 	}
 
 	m[targetSum] = shortestCombination
-	return m[targetSum]
+	return m[targetSum], possibleCombinations
 }
 
 func main() {
