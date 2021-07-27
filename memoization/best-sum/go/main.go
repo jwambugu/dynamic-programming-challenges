@@ -38,8 +38,8 @@ func bestSum(targetSum int, numbers []int, m memo) []int {
 }
 
 func main() {
-	fmt.Println(bestSum(7, []int{5, 3, 4, 7}, memo{})) // [7]
-	//fmt.Println(bestSum(8, []int{2, 3, 5}, memo{}))       // [3,5]
-	//fmt.Println(bestSum(8, []int{1, 4, 5}, memo{}))       // [4,4]
-	//fmt.Println(bestSum(100, []int{1, 2, 5, 25}, memo{})) // [25,25,25,25]
+	fmt.Println(bestSum(7, []int{5, 3, 4, 7}, memo{}))    // [7]
+	fmt.Println(bestSum(8, []int{2, 3, 5}, memo{}))       // [3,5]
+	fmt.Println(bestSum(8, []int{1, 4, 5}, memo{}))       // [4,4]
+	fmt.Println(bestSum(100, []int{1, 2, 5, 25}, memo{})) // [25,25,25,25]
 }
