@@ -1,2 +1,8 @@
-# dynamic-programming-challenges
-This repository contains dynamic coding challenges an their solutions for different programming languages
+# Dynamic Programming Challenges
+
+This repository contains dynamic coding challenges and their solutions. The programming languages used are `go`
+and `javascript`.
+
+The challenges from this course are
+from [Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://youtu.be/oBt53YbR9Kk) by
+FreeCodeCamp which uses javascript, but I recreated them using `go`.
