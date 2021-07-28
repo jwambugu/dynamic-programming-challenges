@@ -1,4 +1,4 @@
-# How Sum
+# Best Sum
 
 Write a function `bestSum(targetSum, numbers)` that takes in a target sum and an array of numbers as arguments.
 
